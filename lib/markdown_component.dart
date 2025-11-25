@@ -222,10 +222,11 @@ class HTag extends BlockMd {
             false,
           )),
           if (match.namedGroup('hash')!.length == 1) ...[
-            const TextSpan(
-              text: "\n ",
-              style: TextStyle(fontSize: 0, height: 0),
-            ),
+            if (config.addNewLineAfterH1)
+              const TextSpan(
+                text: "\n ",
+                style: TextStyle(fontSize: 0, height: 0),
+              ),
             WidgetSpan(
               child: CustomDivider(
                 height: theme.hrLineThickness,

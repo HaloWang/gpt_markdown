@@ -44,6 +44,7 @@ class GptMarkdown extends StatelessWidget {
     this.components,
     this.inlineComponents,
     this.useDollarSignsForLatex = false,
+    this.addNewLineAfterH1 = true,
   });
 
   /// The direction of the text.
@@ -103,6 +104,9 @@ class GptMarkdown extends StatelessWidget {
 
   /// The table builder.
   final TableBuilder? tableBuilder;
+
+  /// Whether to add a new line after the h1 tag.
+  final bool addNewLineAfterH1;
 
   /// The list of components.
   ///  ```dart
@@ -207,6 +211,7 @@ class GptMarkdown extends StatelessWidget {
           components: components,
           inlineComponents: inlineComponents,
           tableBuilder: tableBuilder,
+          addNewLineAfterH1: addNewLineAfterH1,
         ),
       ),
     );
